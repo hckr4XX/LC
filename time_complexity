@@ -19,12 +19,12 @@ Step 1: Count how many times the "inner loop" runs
 From the image:
 
 i value	j runs	times
-0	0	1
-1	0,1	2
-2	0,1,2	3
-3	0,1,2,3	4
+0	0	           1
+1	0,1	           2
+2	0,1,2	       3
+3	0,1,2,3	       4
 …	…	…
-N−1	0 to N−1	N
+N−1	0 to N−1	   N
 
 So total executions of the inner block:
 
