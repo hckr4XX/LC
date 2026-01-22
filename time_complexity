@@ -1,0 +1,34 @@
+# Time complexity measures how the runtime grows as N becomes very large.
+
+    We will always calculate the time complexity for the worst-case scenario.
+    We will avoid including the constant terms.
+    We will also avoid the lower values.
+
+
+
+    for (int i = 0; i < N; i++) {
+        for (int j = 0; j <= i; j++) {
+            // constant time statement
+        }
+    }
+
+
+
+Step 1: Count how many times the "inner loop" runs
+
+From the image:
+
+i value	j runs	times
+0	0	1
+1	0,1	2
+2	0,1,2	3
+3	0,1,2,3	4
+…	…	…
+N−1	0 to N−1	N
+
+So total executions of the inner block:
+
+1 + 2 + 3 + 4 + ... + N
+
+
+## that is O(N^2)
