@@ -1,0 +1,82 @@
+# 01
+
+
+count digits
+
+1. brute force:
+
+    #include <stdio.h>
+    
+    int main() {
+        int N;
+        int count = 0;
+    
+        scanf("%d", &N);
+    
+        if(N == 0) {  // special case for 0
+            count = 1;
+        } else {
+            if(N < 0) N = -N;  // make N positive if it's negative
+            while(N > 0) {
+                N = N / 10;  // remove last digit
+                count++;     // increment count
+            }
+        }
+    
+        printf("%d\n", count);
+        return 0;
+    }
+
+
+COMPLEXITY:
+
+TIME: O(log10N + 1) cuz while loop executes till 0; each time divide by 10 to extract last digit and +1 for constant operation like incrementing
+SPACE: O(1) cuz only one output var to store the length
+
+
+
+2. optimal
+
+
+    #include <stdio.h>
+    #include <math.h>
+    
+    int main() {
+        int N;
+        scanf("%d", &N);
+    
+        if(N == 0) {
+            printf("1\n");
+        } else {
+            int digits = (int)log10(abs(N)) + 1;
+            printf("%d\n", digits);
+        }
+    
+        return 0;
+    }
+    
+
+
+The number of digits of N = smallest integer greater than log10(N)
+
+Mathematically: digits=⌊log10(N)⌋+1
+
+Why +1?
+
+log10(N) gives 4.091 → floor = 4 → add 1 → 5 digit
+
+
+
+COMPLEXITY:
+
+TIME: O(1) cuz simple arithmetic constant operation
+SPACE: O(1) cuz only one output var to store the length
+
+
+
+
+
+#02
+
+
+
