@@ -78,3 +78,106 @@ abcde
         }
 
 
+
+
+
+#04
+
+
+    *
+   ***
+  *****
+ *******
+*********
+
+
+
+        #include <stdio.h>
+        
+        int main() {
+            int N = 5;
+        
+            for (int i = 1; i <= N; i++) {
+        
+                // print spaces
+                for (int s = 1; s <= N - i; s++) {
+                    printf(" ");
+                }
+        
+                // print stars
+                for (int k = 1; k <= 2*i - 1; k++) {
+                    printf("*");
+                }
+        
+                printf("\n");
+            }
+        
+            return 0;
+        }
+
+
+or
+
+
+
+        #include <stdio.h>
+        
+        int main() {
+            for (int i = 1; i <= 5; i++) {
+                for (int j = 1; j <= 9; j++) {   // width must be 9 for pyramid
+                    if (j >= 6 - i && j <= 4 + i) {
+                        printf("*");
+                    } else {
+                        printf(" ");
+                    }
+                }
+                printf("\n");
+            }
+            return 0;
+        }
+
+
+
+
+#05
+
+
+
+*********
+ *******
+  *****
+   ***
+    *
+
+
+
+        #include <stdio.h>
+        
+        int main() {
+            int N = 5;
+        
+            for (int i = N; i >= 1; i--) {
+        
+                // spaces (increase each row)
+                for (int s = 1; s <= N - i; s++) {
+                    printf(" ");
+                }
+        
+                // stars (decrease each row)
+                for (int k = 1; k <= 2*i - 1; k++) {
+                    printf("*");
+                }
+        
+                printf("\n");
+            }
+        
+            return 0;
+        }
+
+
+
+
+#06
+
+
+
