@@ -79,4 +79,103 @@ SPACE: O(1) cuz only one output var to store the length
 #02
 
 
+rev an integer
+
+
+            int reverse(int x) {
+                int rev = 0;
+            
+                while (x != 0) {
+                    int dig = x % 10;
+            
+                    // overflow check
+                    if (rev > 214748364 || (rev == 214748364 && dig > 7))
+                        return 0;
+                    if (rev < -214748364 || (rev == -214748364 && dig < -8))
+                        return 0;
+            
+                    rev = rev * 10 + dig;
+                    x /= 10;
+                }
+            
+                return rev;
+            }
+
+
+x!=0 ->handles negative nos also
+Integer limits in C (32-bit)
+INT_MAX =  2147483647
+INT_MIN = -2147483648
+
+this is to avoid integer overflow
+
+
+
+
+
+
+#03 
+
+palindrome
+
+
+
+        bool isPalindrome(int x) {
+            // negative numbers or numbers ending with 0 (except 0 itself) can't be palindromes
+            if (x < 0 || (x % 10 == 0 && x != 0))
+                return false;
+        
+            int rev = 0;
+        
+            while (x > rev) {
+                rev = rev * 10 + x % 10;
+                x /= 10;
+            }
+        
+            // for even digits: x == rev
+            // for odd digits:  x == rev/10
+            return (x == rev || x == rev / 10);
+        }
+
+
+
+A palindrome reads the same forward and backward
+
+So you only need to reverse half of it
+
+This completely avoids overflow
+
+
+
+Why this works (example)
+Input:
+x = 12321
+
+
+Steps:
+
+x = 12321, rev = 0
+x = 1232 , rev = 1
+x = 123  , rev = 12
+x = 12   , rev = 123   ← stop (x <= rev)
+
+
+Now:
+
+odd length → drop middle digit
+12 == 123/10 ✔
+
+Input:
+x = 1221
+
+x = 12, rev = 12
+
+x == rev ✔
+
+
+TIME: O(N/2)
+SPACE: O(1)
+
+
+
 
