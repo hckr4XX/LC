@@ -119,6 +119,12 @@ this is to avoid integer overflow
 palindrome
 
 
+BRUTE-FORCE:
+
+TIME: O(log N+1)
+SPACE: O(1)
+
+OPTIMAL: 
 
         bool isPalindrome(int x) {
             // negative numbers or numbers ending with 0 (except 0 itself) can't be palindromes
